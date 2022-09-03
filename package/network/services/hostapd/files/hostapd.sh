@@ -852,8 +852,8 @@ hostapd_set_bss_options() {
 			json_get_vars mobility_domain ft_psk_generate_local ft_over_ds reassociation_deadline
 
 			set_default mobility_domain "$(echo "$ssid" | md5sum | head -c 4)"
-			set_default ft_over_ds 1
-			set_default reassociation_deadline 1000
+			set_default ft_over_ds 0
+			set_default reassociation_deadline 20000
 
 			case "$auth_type" in
 				psk|sae|psk-sae)
